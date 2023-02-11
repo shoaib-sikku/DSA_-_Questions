@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array Delete</title>
+    <script>
+      let data = [10, 20, 30, 40, 50, 60, 70, 80];
+      function getArray() {
+        console.log(data);
+        let position = document.getElementById("position").value;
+        position = parseInt(position); //good practice.
+        for (let i = 0; i < data.length; i++) {
+          if (i >= position) {
+            data[i] = data[i + 1];
+            if (i == data.length - 1) {
+              //data.pop();
+              data.length = data.length - 1;
+            }
+          }
+        }
+        console.log(data);
+      }
+
+      //splice(position,1)
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="enter position" id="position" /><br /><br />
+    <button onclick="getArray()">Get New Array after delete the element</button>
+  </body>
+</html>

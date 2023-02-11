@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array insert</title>
+    <script>
+      let data = [60, 30, 10, 67, 40];
+
+      console.log(data);
+      function insertElm() {
+        let newEl = document.getElementById('newEl').value;
+        let position = document.getElementById('position').value;
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            data[i + 1] = data[i];
+            if (i == position) {
+              data[i] = parseInt(newEl);
+            }
+          }
+        }
+        console.log(data);
+      }
+
+      //splice build in js to insert element in array
+    </script>
+  </head>
+  <body>
+    <input type="text" placeholder="enter your position" id="position" />
+    <br /><br />
+    <input type="text" placeholder="enter your element" id="newEl" />
+    <br />
+    <br />
+    <button onclick="insertElm()">Submit</button>
+  </body>
+</html>
