@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reverse String Using Class</title>
+  </head>
+  <body>
+    <h1>Reverse String With The Help Of Class</h1>
+
+    <script>
+      class Stack {
+        data = [];
+        customSize;
+        maxSize;
+        constructor(size) {
+          this.maxSize = size;
+          this.customSize = this.data.length;
+        }
+        push(newVal) {
+          if (this.customSize < this.maxSize) {
+            this.data[this.customSize] = newVal;
+            this.customSize++;
+          } else {
+            alert("stack is full");
+          }
+        }
+        pop() {
+          if (this.customSize > 0) {
+            let lastElement=this.data[this.customSize-1];
+            this.customSize--;
+            this.data.length = this.customSize;
+            return lastElement;
+          } else {
+            alert("stack is already empty.");
+          }
+        }
+        reverseStr(item){
+            for(let i=0;i<item.length;i++){
+                this.push(item[i]);
+            }
+            for(let i=0;i<item.length;i++){
+                item[i]=this.pop();
+            }
+        }
+        display() {
+          console.log(this.data);
+        }
+      }
+      str = 'SHOAIB';
+      str = str.split('');
+      st1 = new Stack(6);
+    </script>
+  </body>
+</html>

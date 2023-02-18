@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack In Javascript</title>
+  </head>
+  <body>
+    <h1>Stack In Javascript</h1>
+
+    <script>
+      let data = [];
+      currentSize = data.length;
+      max = 5;
+
+      function push(newElm) {
+        if (currentSize >= max) {
+          alert(`you can not add more elment in stack ${newElm}.`);
+        } else {
+          data[currentSize] = newElm;
+          currentSize++;
+        }
+      }
+      function pop() {
+        if (currentSize > 0) {
+            currentSize--;
+            data.length = currentSize; 
+          
+        } else {
+            alert("stack is already empty.");
+        }
+      }
+      push(10);
+      push(20);
+      push(30);
+      push(40);
+      push(50);
+      // push(60);
+      pop()
+      pop()
+      pop()
+      console.log(data);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverse String With Stack.</title>
+</head>
+<body>
+    <h1>Reverse String with stack.</h1>
+
+
+    <script>
+        let data = [];
+        customSize=0;
+
+        function push(newVal)
+        {
+            data[customSize]=newVal;
+            customSize++;
+        }
+        function pop()
+        {
+            lastElement = data[customSize-1];
+            customSize--;
+            data.length=customSize;
+            return lastElement
+        }
+        function reverseStr(item)
+        {
+            for(i=0;i<item.length;i++)
+            {
+                push(item[i]);
+            }
+            for(i=0;i<item.length;i++)
+            {
+                item[i]=pop();
+            }
+        }
+
+        let str = 'ANIL';
+        str = str.split('');
+        reverseStr(str);
+        console.log(str.join('')); 
+    </script>
+</body>
+</html>

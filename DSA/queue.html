@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>queue in JavaScript</title>
+  </head>
+  <body>
+    <h1>queue in JavaScript</h1>
+
+    <script>
+      let queue = [];
+      customeSize = queue.length;
+      maxSize = 5;
+      function push(newVal) {
+        if (customeSize < maxSize) {
+          queue[customeSize] = newVal;
+          customeSize++;
+        } else {
+          alert("queue is full");
+        }
+      }
+      function pop() {
+        if (customeSize > 0) {
+          for (i = 0; i < queue.length; i++) {
+            queue[i] = queue[i + 1];
+          }
+          customeSize--;
+          queue.length = customeSize;
+        } else {
+          alert("queue is already empty");
+        }
+      }
+      function front(){
+        if(customeSize>0){
+          console.log(queue[0]);
+        }else{
+          alert('queue is already empty')
+        }
+      }
+      function rare(){
+        if(customeSize>0){
+          console.log(queue[queue.length-1]);
+        }else{
+          alert('queue is already empty')
+        }
+      }
+      console.log(queue)
+    </script>
+  </body>
+</html>

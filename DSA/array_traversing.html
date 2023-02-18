@@ -5,26 +5,25 @@
     <script>
       let data = [3, 2, 6, 54, 12, 1, 57, 1, 2, 6, 7, 8];
 
+      //=========Traversing===========
       //for (let i = 0; i < data.length; i++) {
-     //  console.log(`Array ${i} is ${data[i]}`);
-     //}
+      //  console.log(`Array ${i} is ${data[i]}`);
+      //}
 
-     function getElement(){
-        let elm = document.getElementById('element').value;
+      //=========Accessing===========
+      function getElement() {
+        let elm = document.getElementById("element").value;
 
-        //console.log(typeof elm)
-        if(elm<data.length && typeof parseInt(elm) === 'number')
-        {
-            alert(data[elm]);
+        if (elm < data.length && typeof parseInt(elm) === "number") {
+          alert(data[elm]);
+        } else {
+          alert("plase enter valid input");
         }
-        else{
-            alert('plase enter valid input')
-        }
-     }
+      }
     </script>
   </head>
   <body>
-    <input type="text" id="element" placeholder="enter position"><br><br>
+    <input type="text" id="element" placeholder="enter position" /><br /><br />
     <button onclick="getElement()">Get Element</button>
   </body>
 </html>
