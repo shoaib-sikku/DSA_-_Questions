@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decending Order Selection Sort</title>
+  </head>
+  <body>
+    <h1>Decending Order Selection Sort</h1>
+    <script>
+      let data = [50,34,12,344,56,798,890,2];
+    //  function decSelectionSort(data) {
+    //    let minId;
+    //    for (let i = data.length-1; i >= 0; i--) {
+    //      minId = i;
+    //      for (let j = i - 1; j >= 0; j--) {
+    //        if (data[j] < data[minId]) {
+    //          minId = j;
+    //        }
+    //      }
+    //      let temp = data[minId];
+    //      data[minId] = data[i];
+    //      data[i] = temp;
+    //    }
+    //  }
+
+    //method 2nd easy >>
+    function decSelectionSort(data) {
+        let minId;
+        for (let i = 0; i < data.length; i++) {
+          minId = i;
+          for (let j = i + 1; j < data.length; j++) {
+            if (data[j] > data[minId]) {
+              minId = j;
+            }
+          }
+          let temp = data[minId];
+          data[minId] = data[i];
+          data[i] = temp;
+        }
+      }
+      decSelectionSort(data);
+      console.log(data);
+    </script>
+  </body>
+</html>

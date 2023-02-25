@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion Binary Search</title>
+  </head>
+  <body>
+    <h1>Recursion Binary Search</h1>
+    <script>
+      let data = [10, 15, 18, 34, 67];
+      let start = 0;
+      let end = data.length - 1;
+      let find = 10;
+      let pos = undefined;
+
+      function recursiveBinary(data, start, end) {
+        let mid = Math.floor((start + end) / 2);
+        if (start <= end) {
+          if (data[mid] === find) { 
+            pos = mid;
+            return pos;
+          } else if (data[mid] < find) { 
+            recursiveBinary(data, mid + 1, end);
+          } else {   
+            recursiveBinary(data,start, mid-1); 
+          }
+        }
+      }
+      recursiveBinary(data, start, end);
+      console.log(pos);
+    </script>
+  </body>
+</html>
