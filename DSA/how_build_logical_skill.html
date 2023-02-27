@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Build Logical skills.</title>
+  </head>
+  <body>
+    <h1>
+      find even val from an array,Make double of every element and find array
+      length manually.
+    </h1>
+    <script>
+      let data = [10, 34, 23, 45, 6, 678, 78, 45, 423, 213];
+      let size = 0;
+      let evenVal = [];
+      let doubleEvenVal = [];
+      for (let i = 0; i < data.length; i++) {
+        if (data[i] % 2 == 0) {
+          evenVal[size] = data[i];
+          doubleEvenVal[size] = data[i] * 2;
+          size++;
+        }
+      }
+      console.log(evenVal);
+      console.log(doubleEvenVal);
+      console.log(doubleEvenVal.length);
+    </script>
+  </body>
+</html>
