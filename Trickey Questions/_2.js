@@ -9,5 +9,5 @@ function foo()
 console.log(foo())  //undefined
 
 
-//becuz after return nothing value pass so return undifined.
+//becuz after return nothing value pass so return undefined.
 //return use one line only... (imp) 

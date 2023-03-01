@@ -10,4 +10,4 @@ console.log(typeof b)  //number
 
 
 
-// if i use without var,let,const variable in func. scop they are global variable. 
+// if we use without var,let,const variable in func. scop they are global variable. 
