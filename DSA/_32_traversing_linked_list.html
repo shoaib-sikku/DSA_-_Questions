@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linked List in Javascript</title>
+    <title>Traversing Linked List</title>
 </head>
 <body>
-    <h1>Linked List in Javascript</h1>
-
+    <h1>Traversing Linked List</h1>
     <script>
         class List{
             constructor(data){
@@ -28,12 +27,21 @@
                 this.tail=newNode;
                 this.size+=1;
             }
+            traversing(){
+                let counter = 0;
+                let currentNode=this.head;
+                while(counter<this.size){
+                    console.log(currentNode);
+                    currentNode=currentNode.next;  
+                    counter++;
+                }
+            }
         }
         let list = new List(200);
         list.appendNode(300);
         list.appendNode(400);
-        console.log(list);
-
+        list.traversing();
+        //console.log(list);
     </script>
 </body>
 </html>

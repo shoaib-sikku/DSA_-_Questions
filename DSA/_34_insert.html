@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Linked List in Javascript</title>
+    <title>Insert Linked List</title>
 </head>
 <body>
-    <h1>Linked List in Javascript</h1>
-
+    <h1>Insert Linked List</h1>
     <script>
         class List{
             constructor(data){
@@ -28,12 +27,25 @@
                 this.tail=newNode;
                 this.size+=1;
             }
+            insertNode(index,val){
+                let counter = 1;
+                let currentNode=this.head;
+                while(counter>index){
+                    counter++;
+                    currentNode=currentNode.next;
+                }
+                let nextNode=currentNode.next;
+                currentNode.next={
+                    value:val,
+                    next:nextNode
+                }
+            }
         }
         let list = new List(200);
         list.appendNode(300);
         list.appendNode(400);
+        list.insertNode(2,500);
         console.log(list);
-
     </script>
 </body>
 </html>
