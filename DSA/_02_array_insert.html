@@ -7,8 +7,8 @@
 
       function insertElm() {
         console.log(data);
-        let newEl = document.getElementById('newEl').value;
-        let position = document.getElementById('position').value;
+        let newEl = document.getElementById("newEl").value;
+        let position = document.getElementById("position").value;
         for (let i = data.length - 1; i >= 0; i--) {
           if (i >= position) {
             data[i + 1] = data[i];
@@ -19,6 +19,7 @@
         }
         console.log(data);
       }
+
 
       //splice build in js to insert element in array
     </script>

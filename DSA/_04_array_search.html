@@ -4,17 +4,16 @@
     <title>Array Search</title>
     <script>
       //linear search >>
-      let data = [10, 20, 30, 40, 50, 60, 70, 80, 90,70];
+      let data = [10, 20, 30, 40, 50, 60, 70, 80, 90, 70];
       console.log(data);
-      
-      function getSearch()
-      {
-        let val = document.getElementById('element').value;
+
+      function getSearch() {
+        let val = document.getElementById("element").value;
         for (let i = 0; i < data.length; i++) {
-            if (data[i] === parseInt(val)) {
-              console.log(`yes it is available ${data[i]} position is ${i}.`);
-              continue; //con. used when duplicate value availabe in array.
-            }
+          if (data[i] === parseInt(val)) {
+            console.log(`yes it is available ${data[i]} position is ${i}.`);
+            continue; //continue used when duplicate value availabe in array.
+          }
         }
       }
 
@@ -22,7 +21,7 @@
     </script>
   </head>
   <body>
-    <input type="text" placeholder="enter position" id="element" /><br /><br />
+    <input type="text" placeholder="enter value" id="element" /><br /><br />
     <button onclick="getSearch()">Check availablity</button>
   </body>
 </html>

@@ -11,9 +11,10 @@
       //}
 
       //=========Accessing===========
+      console.log(data);
+
       function getElement() {
         let elm = document.getElementById("element").value;
-
         if (elm < data.length && typeof parseInt(elm) === "number") {
           alert(data[elm]);
         } else {
