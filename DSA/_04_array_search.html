@@ -9,6 +9,7 @@
 
       function getSearch() {
         let val = document.getElementById("element").value;
+        
         for (let i = 0; i < data.length; i++) {
           if (data[i] === parseInt(val)) {
             console.log(`yes it is available ${data[i]} position is ${i}.`);
@@ -22,6 +23,6 @@
   </head>
   <body>
     <input type="text" placeholder="enter value" id="element" /><br /><br />
-    <button onclick="getSearch()">Check availablity</button>
+    <button onclick="getSearch()">Check Position</button>
   </body>
 </html>

@@ -3,7 +3,7 @@
 })();
 
 console.log(typeof a) //undefined
-// console.log(a) //Error:a is not defined
+//console.log(a) //Error:a is not defined
 
 console.log(typeof b)  //number
 
