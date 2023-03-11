@@ -6,6 +6,7 @@ obj = null;
 
 
 
+
 console.log('2nd member ',member);
 console.log('1st obj ',obj);
 
@@ -19,6 +20,6 @@ console.log('1st obj ',obj);
 
 // becuz array will not change.
 // >>>agar update karte hai to dono mai change hoga becuz refrence hai 
-// >>>agar asign kar rahe hai to sirf 2nd mai change hoga. 
+// >>>agar asign kar rahe hai to sirf 2nd mai change hoga ya ussi mai. 
 
 

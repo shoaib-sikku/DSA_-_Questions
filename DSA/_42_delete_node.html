@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>delete node in BST</title>
+</head>
+<body>
+    <h1>delete node in BST</h1>
+    <script>
+        class Node {
+          constructor(val) {
+            this.value = val;
+            this.left = null;
+            this.right = null;
+          }
+        }
+        class BST {
+          constructor() {
+            this.root = null;
+          }
+          isTreeEmpty() {
+            return this.root === null;
+          }
+          makeTree(val) {
+            let newNode = new Node(val);
+            if (this.root === null) {
+              this.root = newNode;
+            } else {
+              this.insertNode(this.root, newNode);
+            }
+          }
+          insertNode(root, newNode) {
+            if (root.value > newNode.value) {
+              if (root.left === null) {
+                root.left = newNode;
+              } else {
+                this.insertNode(root.left, newNode);
+              }
+            } else {
+              if (root.right === null) {
+                root.right = newNode;
+              } else {
+                this.insertNode(root.right, newNode);
+              }
+            }
+          }
+  
+          minNode(root) {
+            if (root.left !== null) {
+              return this.minNode(root.left);
+            } else {
+              return root.value;
+            }
+          }
+          maxNode(root) {
+            if (root.right !== null) {
+              return this.maxNode(root.right);
+            } else {
+              return root.value;
+            }
+          }
+          bfsTraversing() {
+            let queue = [];
+            queue.push(this.root);
+            while (queue.length) {
+              let current = queue.shift();
+              if (current.left) {
+                queue.push(current.left);   
+              }
+              if (current.right) {
+                queue.push(current.right);
+              }
+              console.log(current.value);
+            }
+          }
+          removeData(val){
+            this.root = this.deleteNode(this.root,val);
+          }
+          deleteNode(root,val){ 
+            if(root===null){
+                return null;
+            }
+            if(val<root.value){
+                root.left = this.deleteNode(root.left,val);
+            }else if(val>root.value){
+                root.right = this.deleteNode(root.right,val);
+            }else{
+                if(!root.left && !root.right){
+                    return null;
+                }else if(!root.left){
+                    return root.right;
+                }else if (!root.right){
+                    return root.left;
+                }
+                root.value = this.minNode(root.right);
+                root.right = this.deleteNode(root.right,root.value);
+            }
+            return root
+          }
+        }
+        let bst = new BST();
+        bst.makeTree(20);bst.makeTree(30);bst.makeTree(23);bst.makeTree(40);bst.makeTree(10);bst.makeTree(5);bst.makeTree(11);
+        bst.removeData(5);
+        bst.bfsTraversing();
+      </script>
+</body>
+</html>
