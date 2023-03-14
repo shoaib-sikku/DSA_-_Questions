@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Vertex</title>
+</head>
+<body>
+    <h1>Add Vertex</h1>
+    <script>
+        class Graph{
+            constructor(){
+                this.data={}
+            }
+            addVertex(val){
+                if(!this.data[val]){
+                    this.data[val]=[]
+                }
+            }
+            addEdge(val1,val2){
+                if(!this.data[val1]){
+                    this.addVertex(val1);
+                }
+                if(!this.data[val2]){
+                    this.addVertex(val2);
+                }
+                this.data[val1].push(val2);
+                this.data[val2].push(val1);
+            }
+        }
+        const graph1 = new Graph();
+        //graph1.addVertex('A');
+        graph1.addVertex('B');
+        //graph1.addVertex('C');
+        graph1.addVertex('D');
+        graph1.addEdge("A","C");
+        graph1.addEdge("A","B");
+        console.log(graph1.data);
+    </script>
+</body>
+</html>

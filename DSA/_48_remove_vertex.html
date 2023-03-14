@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Vertex</title>
+</head>
+<body>
+    <h1>Remove Vertex</h1>
+    <script>
+        class Graph{
+            constructor(){
+                this.data={}
+            }
+            addVertex(val){
+                if(!this.data[val]){
+                    this.data[val]=[]
+                }
+            }
+            addEdge(val1,val2){
+                if(!this.data[val1]){
+                    this.addVertex(val1);
+                }
+                if(!this.data[val2]){
+                    this.addVertex(val2);
+                }
+                this.data[val1].push(val2);
+                this.data[val2].push(val1);
+            }
+            removeEdge(v1,v2){
+                if(this.data[v1] && this.data[v2]){
+                    this.data[v1]=this.data[v1].filter((e)=>{
+                        return e!=v2;
+                    })
+                    this.data[v2]=this.data[v2].filter((e)=>{
+                        return e!=v1;
+                    })
+                }
+            }
+            removeVertex(vertex){
+                for(let item of this.data[vertex]){
+                    this.removeEdge(vertex,item);
+                }
+                if(this.data[vertex]){
+                    delete this.data[vertex]
+                }
+            }
+        }
+        const graph1 = new Graph();
+        //graph1.addVertex('A');
+        graph1.addVertex('B');
+        //graph1.addVertex('C');
+        graph1.addVertex('D');
+        graph1.addEdge("A","C");
+        graph1.addEdge("A","B");
+        graph1.removeVertex("C");
+        console.log(graph1.data);
+    </script>
+</body>
+</html>
